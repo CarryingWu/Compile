@@ -1,0 +1,13 @@
+S -->int main ( ) { MAIN 
+  MAIN -->PROGRAM END 
+    PROGRAM -->WHILEBLOCK 
+      WHILEBLOCK -->WHILECAUSE BLOCK 
+        WHILECAUSE -->while ( EXP ) 
+          EXP -->op 
+        BLOCK -->{ PROGRAM } 
+          PROGRAM -->STATEMENT 
+            STATEMENT -->num = EXP SEMICOLON 
+              EXP -->1 
+              SEMICOLON -->; 
+    END -->return EXP ; } 
+      EXP -->0 

@@ -1,0 +1,27 @@
+[
+{
+  "directory": "D:/Code/C++/Compile/build",
+  "command": "D:\\SDK\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe    -g   -std=gnu++11 -o CMakeFiles\\Compiler.dir\\Grammar.cpp.obj -c D:\\Code\\C++\\Compile\\Grammar.cpp",
+  "file": "D:/Code/C++/Compile/Grammar.cpp"
+},
+{
+  "directory": "D:/Code/C++/Compile/build",
+  "command": "D:\\SDK\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe    -g   -std=gnu++11 -o CMakeFiles\\Compiler.dir\\Lex.cpp.obj -c D:\\Code\\C++\\Compile\\Lex.cpp",
+  "file": "D:/Code/C++/Compile/Lex.cpp"
+},
+{
+  "directory": "D:/Code/C++/Compile/build",
+  "command": "D:\\SDK\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe    -g   -std=gnu++11 -o CMakeFiles\\Compiler.dir\\SyntaxTree.cpp.obj -c D:\\Code\\C++\\Compile\\SyntaxTree.cpp",
+  "file": "D:/Code/C++/Compile/SyntaxTree.cpp"
+},
+{
+  "directory": "D:/Code/C++/Compile/build",
+  "command": "D:\\SDK\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe    -g   -std=gnu++11 -o CMakeFiles\\Compiler.dir\\SyntaxTreeNode.cpp.obj -c D:\\Code\\C++\\Compile\\SyntaxTreeNode.cpp",
+  "file": "D:/Code/C++/Compile/SyntaxTreeNode.cpp"
+},
+{
+  "directory": "D:/Code/C++/Compile/build",
+  "command": "D:\\SDK\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe    -g   -std=gnu++11 -o CMakeFiles\\Compiler.dir\\main.cpp.obj -c D:\\Code\\C++\\Compile\\main.cpp",
+  "file": "D:/Code/C++/Compile/main.cpp"
+}
+]
