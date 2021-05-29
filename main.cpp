@@ -8,6 +8,7 @@ static vector<Token> lex;
 
 int main()
 {
+    //愣头小青年的测试
     //获取源文件的指针，助教老师如果要测试的话，这里的路径请改为源文件在本机的绝对路径，另外Grammar.cpp中的init函数中的文法路径也需要修改
     FILE* fp = fopen("D:/Code/C++/Compile/source.txt", "r");
     if (!fp)
