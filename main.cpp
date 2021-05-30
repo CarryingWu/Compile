@@ -35,14 +35,15 @@ int main()
     bool isJudged = grammar.judge(lex,&syntaxTree);
     cout<<"语法分析结束"<<endl;
 
-    if (isJudged){
+    if (isJudged){ //语法分析已经成功
         cout<<"开始进行语义分析"<<endl;
         SyntaxTreeNode * root = syntaxTree.getRootNode();
         SemanticAnalyser *semanticAnalyser = new SemanticAnalyser(root);
-        semanticAnalyser->semantics();
-        cout<<"分析完成"<<endl;
+        semanticAnalyser->semantics();        
+        cout<<"语义分析已通过，程序未检测到语义错误"<<endl;
+        //输出符号表        
         semanticAnalyser->printSymbolTableInfo();
-        cout<<"语义分析结束"<<endl;
+        
     }
 
     return 0;

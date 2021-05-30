@@ -28,5 +28,7 @@ private:
 
 	ValType checkExperment(SyntaxTreeNode* expNode);
 
+	void checkAssign(SyntaxTreeNode* assignNode);
+
 };
 #endif

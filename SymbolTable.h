@@ -4,15 +4,13 @@
 using namespace std;
 
 typedef enum{
-    INT,BOOL,FLOAT
+    NONE,INT,BOOL,FLOAT
 }ValType;
 
 typedef struct
 {
     /**符号本身**/
     Token *tk;
-    /**符号对象类型：函数/变量/常量**/
-    //ObjType objType;
     /**值的类型：int/bool/string**/
     ValType valType;
 } Sym;

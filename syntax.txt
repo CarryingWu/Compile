@@ -18,7 +18,8 @@ EXP -> EXP operator identifier
 EXP -> EXP operator const
 STATEMENT -> VARLIST SEMICOLON
 STATEMENT -> CALL SEMICOLON
-STATEMENT -> identifier assign EXP SEMICOLON
+STATEMENT -> ASSIGN SEMICOLON
+ASSIGN -> identifier assign EXP
 SEMICOLON -> ;
 CALL -> identifier ( PARAMETER )
 PARAMETER -> identifier

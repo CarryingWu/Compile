@@ -295,7 +295,7 @@ bool Grammar::judge(vector<Token> &lex, SyntaxTree* syntaxTree)
 
                 }
                 symbol.push(pre.left);
-                SyntaxTreeNode* newNode = new SyntaxTreeNode(*new Token(pre.left,"#",0));
+                SyntaxTreeNode* newNode = new SyntaxTreeNode(*new Token(pre.left,"#",frolex.line));
                 syntaxTree->setRootNode(newNode);
                 cout<<"进行规约：";
                 while (!guiyueStack.empty()){

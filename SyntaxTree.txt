@@ -4,15 +4,15 @@ S -->int main ( ) { MAIN
       PROGRAM -->PROGRAM STATEMENT 
         PROGRAM -->STATEMENT 
           STATEMENT -->VARLIST SEMICOLON 
-            VARLIST -->VARLIST , b 
-              VARLIST -->int a 
+            VARLIST -->int a 
             SEMICOLON -->; 
         STATEMENT -->VARLIST SEMICOLON 
-          VARLIST -->bool c 
+          VARLIST -->bool b 
           SEMICOLON -->; 
-      STATEMENT -->c = EXP SEMICOLON 
-        EXP -->EXP + 2 
-          EXP -->1 
+      STATEMENT -->ASSIGN SEMICOLON 
+        ASSIGN -->a = EXP 
+          EXP -->EXP + b 
+            EXP -->1 
         SEMICOLON -->; 
     END -->return EXP ; } 
       EXP -->0 
