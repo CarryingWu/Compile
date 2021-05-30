@@ -3,7 +3,6 @@
 //
 
 #include "Grammar.h"
-#include "SyntaxTree.h"
 
 Grammar::Grammar()
 {
@@ -260,13 +259,12 @@ void Grammar::getProjectset()
     }
 }
 
-void Grammar::judge(vector<Token> &lex)
+bool Grammar::judge(vector<Token> &lex, SyntaxTree* syntaxTree)
 {
     stack<int> status;
     stack<string> symbol;
     status.push(0);
-    stack<SyntaxTreeNode*> printStack;
-    SyntaxTree syntaxTree;
+    stack<SyntaxTreeNode*> printStack;    
     while (lex.size() > 0)
     {
         Token frolex = lex.back();
@@ -276,8 +274,8 @@ void Grammar::judge(vector<Token> &lex)
         {
             cout<<"--------->>全部token规约完毕，程序符合文法要求!"<<endl;
             cout<<"开始保存语法树"<<endl;
-            syntaxTree.display();
-            return;
+            syntaxTree->display();
+            return true;
         }
         if (Action[topsta][frolex.word] != 0 || Action[topsta][frolex.type] != 0)
         {
@@ -298,7 +296,7 @@ void Grammar::judge(vector<Token> &lex)
                 }
                 symbol.push(pre.left);
                 SyntaxTreeNode* newNode = new SyntaxTreeNode(*new Token(pre.left,"#",0));
-                syntaxTree.setRootNode(newNode);
+                syntaxTree->setRootNode(newNode);
                 cout<<"进行规约：";
                 while (!guiyueStack.empty()){
                     cout<<guiyueStack.top()<<"  ";
@@ -307,7 +305,7 @@ void Grammar::judge(vector<Token> &lex)
                 cout<<"--> "<<pre.left<<endl;
 
                 for (int i = 0; i < pre.right.size(); ++i) {
-                    syntaxTree.addChild(printStack.top());
+                    syntaxTree->addChild(printStack.top());
                     printStack.pop();
                 }
                 printStack.push(newNode);
@@ -316,7 +314,7 @@ void Grammar::judge(vector<Token> &lex)
                 if (Goto[status.top()][pre.left] == 0)
                 {
                     cout<<"第"<<frolex.line<<"行出现语法错误，出错token："<<frolex.word<<"  token类型："<<frolex.type<<endl;
-                    return;
+                    return false;
                 }
                 else
                     status.push(Goto[status.top()][pre.left]);
@@ -332,7 +330,7 @@ void Grammar::judge(vector<Token> &lex)
         else
         {
             cout<<"第"<<frolex.line<<"行出现语法错误，出错token："<<frolex.word<<"  token类型："<<frolex.type<<endl;
-            return;
+            return false;
         }
     }
 }

@@ -31,7 +31,7 @@ SyntaxTree::~SyntaxTree(){
 
 void SyntaxTree::display(FILE *fo){
 	if(fo == NULL){
-        fo = fopen("/home/crazywu/CLionProjects/lex/SyntaxTree.txt", "w");
+        fo = fopen("D:/Code/C++/Compile/SyntaxTree.txt", "w");
 		//fo = stdout;
 	}
     bfs(fo,this->root,0);

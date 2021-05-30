@@ -14,7 +14,8 @@
 #include <stack>
 #include <map>
 #include <set>
-#include "Structure.h"
+#include "SyntaxTree.h"
+
 using namespace std;
 
 const int state_maxn = 300;
@@ -74,7 +75,7 @@ public:
     set<string> dfs(vector<string> &afterset);
     set<Node> Derive(Node &pre);
     void getProjectset();
-    void judge(vector<Token> &lex);
+    bool judge(vector<Token> &lex,SyntaxTree* syntaxTree);
 };
 
 

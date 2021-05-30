@@ -27,7 +27,7 @@ PARAMETER -> PARAMETER , identifier
 PARAMETER -> PARAMETER , const
 VARLIST -> int identifier
 VARLIST -> VARLIST , identifier
-VARLIST -> char identifier
+VARLIST -> bool identifier
 VARLIST -> VARLIST , identifier
 VARLIST -> float identifier
 VARLIST -> VARLIST , identifier

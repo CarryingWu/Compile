@@ -2,9 +2,10 @@
 // Created by crazywu on 2021/4/20.
 //
 
-#include "Structure.h"
 #include "SyntaxTreeNode.h"
 
+#ifndef SYNTAXTREENODE_H
+#define SYNTAXTREENODE_H
 class SyntaxTree{
 private:
 	SyntaxTreeNode *root;
@@ -33,6 +34,6 @@ public:
 
 
 };
-
+#endif
 
 

@@ -2,9 +2,11 @@
 // Created by crazywu on 2021/4/20.
 //
 
-#include <stdio.h>
-#include "Structure.h"
 #include <vector>
+#include "Structure.h"
+#ifndef SYNTAXTREE_H
+#define SYNTAXTREE_H
+
 class SyntaxTreeNode{
 private:
 	vector<SyntaxTreeNode *> childTrees;
@@ -28,7 +30,8 @@ public:
 	SyntaxTreeNode* getChild(string word);
 
 	friend class SyntaxTree;
+	friend class SemanticAnalyser;
 };
-
+#endif
 
 

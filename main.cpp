@@ -3,12 +3,13 @@
 //
 #include "Lex.h"
 #include "Grammar.h"
+#include "Semantic.h"
+#include "SyntaxTree.h"
 using namespace std;
 static vector<Token> lex;
 
 int main()
-{
-    //愣头小青年的测试
+{    
     //获取源文件的指针，助教老师如果要测试的话，这里的路径请改为源文件在本机的绝对路径，另外Grammar.cpp中的init函数中的文法路径也需要修改
     FILE* fp = fopen("D:/Code/C++/Compile/source.txt", "r");
     if (!fp)
@@ -30,7 +31,19 @@ int main()
     cout<<"token总数目："<<lex.size()<<endl;
     Grammar grammar;
     cout<<"开始进行语法分析"<<endl;
-    grammar.judge(lex);
+    SyntaxTree syntaxTree;
+    bool isJudged = grammar.judge(lex,&syntaxTree);
     cout<<"语法分析结束"<<endl;
+
+    if (isJudged){
+        cout<<"开始进行语义分析"<<endl;
+        SyntaxTreeNode * root = syntaxTree.getRootNode();
+        SemanticAnalyser *semanticAnalyser = new SemanticAnalyser(root);
+        semanticAnalyser->semantics();
+        cout<<"分析完成"<<endl;
+        semanticAnalyser->printSymbolTableInfo();
+        cout<<"语义分析结束"<<endl;
+    }
+
     return 0;
 }
